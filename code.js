@@ -3,9 +3,9 @@
 const goods_prices = [200, 550, 4000, 23, 58, 5000, 485, 711];
 
 const calculateBonus = (prices, minimum_sum = 10000, discount_in_percent = 5) => {
-  let sum = sumArray(prices)
+  const sum = sumArray(prices)
   if (sum > minimum_sum) {
-    return Math.trunc(sum * discount_in_percent / 100);
+    return Math.trunc((sum - minimum_sum) * discount_in_percent / 100);
   } else {
     return 0;
   }
